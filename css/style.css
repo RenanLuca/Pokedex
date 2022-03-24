@@ -1,0 +1,107 @@
+
+*{
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+}
+
+
+body{
+background: #e2e1e1;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+/* ==============BUTTONS======================= */
+.poke-footer-buttons button{
+    padding: 1rem 2rem;
+    background: #62bb9d;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom:1rem;
+}
+.poke-footer-buttons button:hover{
+    background: #6dcfaf;
+}
+
+
+
+
+/*=================POKEDEX=================== */
+.pokedex{
+    width: 500px;
+    height: 730px;
+    background-color: #fff;
+    border-radius: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    margin: 1rem;
+    border: 6px solid #84f8d1
+}
+.pokedex h1 {
+    border-bottom: 2px solid #ccc;
+    padding: 1rem;
+    
+}
+/*===============POKEDEX HEADER================ */
+.poke-header{
+    border-radius: 32rem 32rem 1101% 4%;
+    background-color: #62bb9d;
+
+}
+.poke-header img{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 2rem 0 2rem;
+    filter: drop-shadow(11px 0px 12px #000)
+}
+.poke-header h2{
+    color: #fff;
+    font-size: 2.4rem;
+}
+.poke-header-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.poke-header-info p{
+    background-color:#84f8d1 ;
+    color: #333;
+    width: 50%;
+    padding: 0.1rem;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+    
+}
+.poke-header-info span{
+    color: #fff;
+    font-size: 1.8rem; 
+}
+
+/* ================POKE BODY==================== */
+.poke-body{
+    padding: 2rem 5rem 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.poke-body li{
+    text-align: left;
+    list-style: none;
+    padding: 0.3rem;
+    
+}
+
+.poke-body h3{
+    text-align: left;
+    margin: 0.3rem;
+    color: #62bb9d;
+}
+.poke-body ul{
+    padding: 0;
+}
