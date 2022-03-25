@@ -1,4 +1,43 @@
 
+:root{
+    --fire-main:#EF8200;
+    --fire-secondary:#FFF697;
+    --grass-main:#009A63;
+    --grass-secondary: #62bb9d;
+    --water-main:#3646EB;
+    --water-secondary:#38DEF5;
+    --bug-main:#573a24;
+    --bug-secondary:#c89a57;
+    --normal-main:#888;
+    --normal-secondary:#eee;
+    --poison-main:#52047a;
+    --poison-secondary:#dc81fb;
+    --electric-main:#e29a13;
+    --electric-secondary:#ffff8d;
+    --ground-main:#AE9145;
+    --ground-secondary:#DDBD68;
+    --fairy-main:#F9B1AF;
+    --fairy-secondary:#F9DAD9;
+    --fighting-main:#121212;
+    --fighting-secondary:#b9b6b6;
+    --psychic-main:#120348;
+    --psychic-secondary:#6764e4;
+    --rock-main:#717069;
+    --rock-secondary:#DBD2A9;
+    --ghost-main:#2F033E;
+    --ghost-secondary:#8774A2;
+    --ice-main:#04aed9;
+    --ice-secondary:#c5e0f5;
+    --dragon-main:#e9ca05;
+    --dragon-secondary:#b39d0f;
+    --dark-main:#002138;
+    --dark-secondary:#86A6BD;
+    --steel-main:#4d687c;
+    --steel-secondary:#94bedb;
+    --flying-main:#6B0E57;
+    --flying-secondary:#BD9FB6;
+   
+}
 *{
     font-family: 'Roboto Mono', monospace;
     margin: 0;
@@ -15,31 +54,35 @@ align-items: center;
 /* ==============BUTTONS======================= */
 .poke-footer-buttons button{
     padding: 1rem 2rem;
-    background: #62bb9d;
+    background: var(--flying-main);
     border: none;
     color: #fff;
     font-size: 2rem;
     border-radius: 6px;
     cursor: pointer;
-    margin-bottom:1rem;
+    max-height: max-content;
 }
 .poke-footer-buttons button:hover{
-    background: #6dcfaf;
+    background: var(--flying-secondary);
+    color: var(--flying-main);
 }
-
-
-
+/* ================ Group ==================== */
+.poke-header h2::first-letter,
+.poke-type,
+.poke-body-ability li{
+    text-transform: capitalize;
+}
 
 /*=================POKEDEX=================== */
 .pokedex{
     width: 500px;
-    height: 750px;
+    height: max-content;
     background-color: #fff;
     border-radius: 3rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: center;
     margin: 1rem;
-    border: 6px solid #84f8d1
+    border: 6px solid var(--flying-secondary)
 }
 .pokedex h1 {
     border-bottom: 2px solid #ccc;
@@ -49,7 +92,7 @@ align-items: center;
 /*===============POKEDEX HEADER================ */
 .poke-header{
     border-radius: 32rem 32rem 1101% 4%;
-    background-color: #62bb9d;
+    background-color: var(--flying-main);
 
 }
 .poke-header img{
@@ -57,51 +100,67 @@ align-items: center;
     height: 300px;
     overflow: hidden;
     margin: 2rem 0 2rem;
-    filter: drop-shadow(11px 0px 12px #000)
+    filter: drop-shadow(11px 0px 12px #000);
+    transition: transform .5s ease;
+}
+.poke-header img:hover{
+    transform: scale(1.1);
 }
 .poke-header h2{
     color: #fff;
     font-size: 2.4rem;
+    
 }
+
 .poke-header-info{
     display: flex;
     justify-content: space-between;
     padding: 1rem;
 }
-.poke-header-info p{
-    background-color:#84f8d1 ;
-    color: #333;
-    width: 50%;
-    padding: 0.1rem;
-    border-radius: 1rem;
-    margin-top: 0.4rem;
-    
-}
-.poke-header-info span{
+
+.poke-id{
     color: #fff;
     font-size: 1.8rem; 
+}
+.poke-type{
+    min-width: 140px;
+    width: 50%;
+    background-color:var(--flying-secondary) ;
+    padding: 0.1rem;
+    color: #333;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* ================POKE BODY==================== */
 .poke-body{
-    padding: 2rem 5rem 2rem 5rem;
+   
+    margin: 1rem 2.4rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    min-height: 126px;
+    
     
 }
 .poke-body li{
     text-align: left;
     list-style: none;
     padding: 0.3rem;
-    
 }
 
 .poke-body h3{
     text-align: left;
     margin: 0.3rem;
-    color: #62bb9d;
+    color: var(--flying-main);
+    font-size: 1.6rem;
 }
 .poke-body ul{
     padding: 0;
+}
+/* ==============FOOTER================= */
+.poke-footer{
+    margin: 3rem 0rem;
 }
