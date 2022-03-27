@@ -18,8 +18,20 @@
     }
     function setImage (id){
         const img = document.querySelector(".poke-img");
-         img.src=`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`
-         
+        img.src=`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`
+        img.classList.forEach((cl) =>{
+            if(cl == "slide-in"){
+                img.classList.remove("slide-in")
+                img.classList.add("slide-out")
+            }else if ( cl == "slide-out"){
+                img.classList.remove("slide-out")
+                img.classList.add("slide-in")
+            }
+            else {
+                img.classList.add("slide-in")
+                console.log('oi')
+            }
+        } )
     }
 
     const dom = {
@@ -53,10 +65,30 @@
                     pokeType.style.backgroundColor = `var(--${type}-secondary)`
                     buttonNextPokemon.style.backgroundColor = `var(--${type}-main)`
                     buttonPreviousPokemon.style.backgroundColor = `var(--${type}-main)`
+                    buttonNextPokemon.style.color = `#fff`
+                    buttonPreviousPokemon.style.color = `#fff`
                     for( title of bodyTitle) {
                         title.style.color = `var(--${type}-main)`
                     }
-                           
+                    console.log(buttonNextPokemon)
+        
+                    buttonNextPokemon.addEventListener("mouseout", () => {
+                        buttonNextPokemon.style.backgroundColor = `var(--${type}-main)`
+                        buttonNextPokemon.style.color = `#fff`
+                    })
+                
+                    buttonPreviousPokemon.addEventListener("mouseout", () => {
+                        buttonPreviousPokemon.style.backgroundColor = `var(--${type}-main)`
+                        buttonPreviousPokemon.style.color = `#fff`
+                    })
+                    buttonNextPokemon.addEventListener("mousemove", () => {
+                        buttonNextPokemon.style.backgroundColor = `var(--${type}-secondary)`
+                        buttonNextPokemon.style.color = `var(--${type}-main)`
+                    })
+                    buttonPreviousPokemon.addEventListener("mousemove", () => {
+                        buttonPreviousPokemon.style.backgroundColor = `var(--${type}-secondary)`
+                        buttonPreviousPokemon.style.color = `var(--${type}-main)`
+                    })
                 }
             })
             pokeName.innerText = pokemon.name

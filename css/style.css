@@ -1,6 +1,6 @@
 
 :root{
-    --fire-main:#EF8200;
+    --fire-main:#ef4c00;
     --fire-secondary:#FFF697;
     --grass-main:#009A63;
     --grass-secondary: #62bb9d;
@@ -28,8 +28,8 @@
     --ghost-secondary:#8774A2;
     --ice-main:#04aed9;
     --ice-secondary:#c5e0f5;
-    --dragon-main:#e9ca05;
-    --dragon-secondary:#b39d0f;
+    --dragon-main:#b39d0f;
+    --dragon-secondary:#ffe120;
     --dark-main:#002138;
     --dark-secondary:#86A6BD;
     --steel-main:#4d687c;
@@ -62,10 +62,11 @@ align-items: center;
     cursor: pointer;
     max-height: max-content;
 }
-.poke-footer-buttons button:hover{
+
+/* .poke-footer-buttons button:hover{
     background: var(--flying-secondary);
     color: var(--flying-main);
-}
+} */
 /* ================ Group ==================== */
 .poke-header h2::first-letter,
 .poke-type,
@@ -101,10 +102,34 @@ align-items: center;
     overflow: hidden;
     margin: 2rem 0 2rem;
     filter: drop-shadow(11px 0px 12px #000);
-    transition: transform .5s ease;
+    transition: transform .5s ease-in-out;
+    
+}
+.slide-in{
+    animation: slide-in .5s ease-in-out;
+}
+.slide-out{
+    animation: slide-out .5s ease-in-out;
+    overflow: hidden;
 }
 .poke-header img:hover{
     transform: scale(1.1);
+}
+@keyframes slide-out{
+    0%{
+        transform: skewX(5deg) translateX(400px) ;
+    }
+    100% {
+        transform: skewX(5deg) translateX(0px);
+    }
+}
+@keyframes slide-in {
+    0%{
+        transform: skewX(5deg) translateX(-400px);
+    }
+    100%{
+        transform: skew(0deg)
+    }
 }
 .poke-header h2{
     color: #fff;
